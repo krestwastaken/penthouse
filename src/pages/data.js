@@ -170,12 +170,6 @@ export const offices = [
   },
 ];
 
-export const officeDetails = [
-  { label: "Address", value: selected.address },
-  { label: "Phone", value: selected.phone },
-  { label: "Email", value: selected.email },
-  { label: "Office Head", value: selected.head },
-];
 
 
 

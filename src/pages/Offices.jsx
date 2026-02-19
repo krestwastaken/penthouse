@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { officeDetails, offices } from "./data";
+import {  offices } from "./data";
 
 
 const regions = ["All", "Americas", "Europe", "Middle East", "Asia Pacific"];
@@ -13,6 +13,13 @@ export default function Offices() {
     activeRegion === "All"
       ? offices
       : offices.filter((o) => o.region === activeRegion);
+
+      const officeDetails = [
+        { label: "Address", value: selected.address },
+        { label: "Phone", value: selected.phone },
+        { label: "Email", value: selected.email },
+        { label: "Office Head", value: selected.head },
+      ];
 
   return (
     <main className="offices page">
