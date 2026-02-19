@@ -1,68 +1,7 @@
 import React, { useState } from "react";
 
+import { officeDetails, offices } from "./data";
 
-const offices = [
-  {
-    id: 1,
-    city: "New York",
-    country: "United States",
-    address: "1 World Trade Center, Suite 8500",
-    phone: "+1 212 555 0100",
-    email: "ny@penthouse.com",
-    region: "Americas",
-    head: "Alexander Voss",
-  },
-  {
-    id: 2,
-    city: "Los Angeles",
-    country: "United States",
-    address: "9800 Wilshire Blvd, Beverly Hills",
-    phone: "+1 310 555 0200",
-    email: "la@penthouse.com",
-    region: "Americas",
-    head: "Sarah Kim",
-  },
-  {
-    id: 3,
-    city: "London",
-    country: "United Kingdom",
-    address: "1 Mayfair Square, London W1K",
-    phone: "+44 20 7946 0800",
-    email: "london@penthouse.com",
-    region: "Europe",
-    head: "James Ashford",
-  },
-  {
-    id: 4,
-    city: "Paris",
-    country: "France",
-    address: "8 Avenue Montaigne, 75008",
-    phone: "+33 1 47 20 0100",
-    email: "paris@penthouse.com",
-    region: "Europe",
-    head: "Isabelle Laurent",
-  },
-  {
-    id: 5,
-    city: "Dubai",
-    country: "UAE",
-    address: "DIFC Gate Village, Tower 1",
-    phone: "+971 4 555 0300",
-    email: "dubai@penthouse.com",
-    region: "Middle East",
-    head: "Khalid Al Mansoori",
-  },
-  {
-    id: 6,
-    city: "Singapore",
-    country: "Singapore",
-    address: "Marina Bay Financial Centre, Tower 3",
-    phone: "+65 6555 0400",
-    email: "sg@penthouse.com",
-    region: "Asia Pacific",
-    head: "Marcus Chen",
-  },
-];
 
 const regions = ["All", "Americas", "Europe", "Middle East", "Asia Pacific"];
 
@@ -139,12 +78,7 @@ export default function Offices() {
                     </span>
                   </div>
                   <div className="office-detail__fields">
-                    {[
-                      { label: "Address", value: selected.address },
-                      { label: "Phone", value: selected.phone },
-                      { label: "Email", value: selected.email },
-                      { label: "Office Head", value: selected.head },
-                    ].map(({ label, value }) => (
+                    {officeDetails.map(({ label, value }) => (
                       <div key={label} className="office-detail__field">
                         <span className="office-detail__field-label">
                           {label}

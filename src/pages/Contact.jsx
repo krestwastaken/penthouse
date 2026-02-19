@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { contacts } from "./data";
 
 
 export default function Contact() {
@@ -51,28 +52,7 @@ export default function Contact() {
             </div>
 
             <div className="contact-channels">
-              {[
-                {
-                  label: "Phone",
-                  value: "+1 800 PENTHOUSE",
-                  href: "tel:+1800PENTHOUSE",
-                },
-                {
-                  label: "Email",
-                  value: "hello@penthouse.com",
-                  href: "mailto:hello@penthouse.com",
-                },
-                {
-                  label: "Head Office",
-                  value: "One Luxury Tower, New York, NY 10001",
-                  href: null,
-                },
-                {
-                  label: "Hours",
-                  value: "Mon–Fri: 9:00 AM – 6:00 PM EST",
-                  href: null,
-                },
-              ].map(({ label, value, href }) => (
+              {contacts.map(({ label, value, href }) => (
                 <div key={label} className="contact-channel">
                   <span className="contact-channel__label">{label}</span>
                   {href ? (

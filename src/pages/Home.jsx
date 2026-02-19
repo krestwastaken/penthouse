@@ -1,35 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-const featuredProperties = [
-  {
-    id: 1,
-    name: "Sky Penthouse",
-    location: "Manhattan, New York",
-    price: "$12.4M",
-    beds: 4,
-    sqft: "5,200 sqft",
-    tag: "Exclusive",
-  },
-  {
-    id: 2,
-    name: "Glass Villa",
-    location: "Beverly Hills, CA",
-    price: "$8.9M",
-    beds: 5,
-    sqft: "7,800 sqft",
-    tag: "New Listing",
-  },
-  {
-    id: 3,
-    name: "The Terrace",
-    location: "Miami Beach, FL",
-    price: "$5.6M",
-    beds: 3,
-    sqft: "$3,400 sqft",
-    tag: "Featured",
-  },
-];
+import { featuredProperties } from "./data";
 
 export default function Home() {
   const heroRef = useRef(null);

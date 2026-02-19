@@ -1,28 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const team = [
-  {
-    name: "Alexander Voss",
-    role: "Founder & CEO",
-    years: "25 years experience",
-  },
-  {
-    name: "Isabelle Laurent",
-    role: "Head of Acquisitions",
-    years: "18 years experience",
-  },
-  {
-    name: "Marcus Chen",
-    role: "Chief Design Advisor",
-    years: "15 years experience",
-  },
-  {
-    name: "Sofia Marchetti",
-    role: "Director of Luxury Sales",
-    years: "20 years experience",
-  },
-];
+import { team, cards } from "./data";
 
 export default function About() {
   return (
@@ -90,28 +69,7 @@ export default function About() {
             </h2>
           </div>
           <div className="values-grid">
-            {[
-              {
-                icon: "◈",
-                title: "Discretion",
-                text: "Privacy and confidentiality are the foundations of every client relationship we build.",
-              },
-              {
-                icon: "◇",
-                title: "Curation",
-                text: "We select only properties that meet our exacting standards of quality, location, and exclusivity.",
-              },
-              {
-                icon: "○",
-                title: "Integrity",
-                text: "Transparent advice, honest valuations, and principled representation — always.",
-              },
-              {
-                icon: "△",
-                title: "Excellence",
-                text: "We pursue perfection in every detail, from the first meeting to the closing of every transaction.",
-              },
-            ].map(({ icon, title, text }) => (
+            {cards.map(({ icon, title, text }) => (
               <div key={title} className="value-card">
                 <span className="value-card__icon">{icon}</span>
                 <h3 className="value-card__title">{title}</h3>
