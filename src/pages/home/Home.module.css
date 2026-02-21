@@ -455,54 +455,117 @@
 
 .hideMobile { display: inline; }
 
-/* ─── RESPONSIVE ────────────────────────────── */
+/* ─────────────────────────────────────────────
+   RESPONSIVE BREAKPOINTS
+   ───────────────────────────────────────────── */
+
+/* Tablet — 1024px */
 @media (max-width: 1024px) {
-  .heroBgWrap { width: 48%; }
-  .searchBarInner { grid-template-columns: 1fr 1fr auto; }
-  .searchBarInner .searchField:last-of-type { grid-column: 1 / -2; }
-}
-
-@media (max-width: 900px) {
-  .heroBgWrap { display: none; }
-
-  .heroContent {
-    margin-left: clamp(20px, 5vw, 40px);
-    max-width: 100%;
-    padding-right: clamp(20px, 5vw, 40px);
+  .propertyGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
-  .heroStats { gap: 32px; flex-wrap: wrap; }
-
-  .searchBarInner {
-    grid-template-columns: 1fr 1fr;
+  .quoteInner {
+    gap: 32px;
   }
 
-  .searchBtn { grid-column: 1 / -1; }
-
-  .propertyGrid { grid-template-columns: 1fr 1fr; }
-
-  .quoteInner { grid-template-columns: 1fr; gap: 36px; }
-
-  .ctaBox { grid-template-columns: 1fr; }
-  .ctaBoxVisual { height: 220px; order: -1; }
+  .ctaBox {
+    min-height: 400px;
+  }
 }
 
-@media (max-width: 600px) {
-  .heroStats { gap: 24px; }
-  .heroStat { flex: 1 1 40%; }
+/* Large mobile — 768px */
+@media (max-width: 768px) {
+  .propertyGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
 
-  .searchBarInner { grid-template-columns: 1fr; }
-  .searchBtn { width: 100%; text-align: center; }
+  .quoteInner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 
-  .propertyGrid { grid-template-columns: 1fr; }
+  /* Divider between person and quote on mobile */
+  .quotePerson {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .ctaBox {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  /* Image moves above content on mobile */
+  .ctaBoxVisual {
+    height: 220px;
+    min-height: unset;
+    order: -1;
+  }
+
+  .ctaBoxContent {
+    padding: 32px 24px;
+  }
 
   .sectionHead {
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 10px;
   }
 
-  .hideMobile { display: none; }
+  .exploreLink {
+    font-size: 12px;
+  }
+}
 
-  .partnersList { gap: 24px; }
+/* Mobile — 480px */
+@media (max-width: 480px) {
+  .propertyGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .propertyCardBody {
+    padding: 14px;
+  }
+
+  .propertyCardMeta {
+    font-size: 10px;
+    gap: 6px;
+  }
+
+  /* Stack price and button vertically on small screens */
+  .propertyCardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .propertyCardCta {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .quoteContent p {
+    font-size: 14px;
+  }
+
+  .ctaBoxVisual {
+    height: 180px;
+  }
+
+  .ctaBoxContent {
+    padding: 24px 20px;
+    gap: 14px;
+  }
+
+  /* Full width CTA button on mobile */
+  .btnPrimary {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 24px;
+  }
 }
