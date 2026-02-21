@@ -38,7 +38,7 @@
 }
 
 .logoImage {
-  height: 32px;          /* adjust as needed */
+  height: 42px;          /* adjust as needed */
   width: auto;
   object-fit: contain;
 }

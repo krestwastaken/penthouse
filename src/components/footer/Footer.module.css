@@ -1,0 +1,251 @@
+/* ─── FOOTER ────────────────────────────────── */
+.footer {
+  background: #0d1117;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+}
+
+/* ─── TOP SECTION ───────────────────────────── */
+.footerTop {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px clamp(20px, 5vw, 80px) 60px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 60px;
+}
+
+/* ─── BRAND COLUMN ──────────────────────────── */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logoImage {
+  height: 62px;          /* adjust as needed */
+  width: auto;
+  object-fit: contain;
+}
+
+.logoIcon {
+  font-size: 22px;
+  color: #fff;
+  line-height: 1;
+}
+
+.logoText {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #718096;
+  max-width: 220px;
+}
+
+.socials {
+  display: flex;
+  gap: 0;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.social {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #4a5568;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social::before {
+  content: '↗';
+  font-size: 11px;
+  color: #2b4c8c;
+  transition: transform 0.25s ease;
+}
+
+.social:hover {
+  color: #fff;
+}
+
+.social:hover::before {
+  transform: translate(2px, -2px);
+}
+
+/* ─── NAV COLUMNS ───────────────────────────── */
+.navGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.navHeading {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.navLink {
+  font-size: 13px;
+  color: #718096;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  display: block;
+}
+
+.navLink:hover {
+  color: #fff;
+}
+
+/* ─── CONTACT COLUMN ────────────────────────── */
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contactLabel {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #2b4c8c;
+  font-weight: 600;
+}
+
+.contactValue {
+  font-size: 13px;
+  color: #718096;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  line-height: 1.5;
+}
+
+a.contactValue:hover {
+  color: #fff;
+}
+
+/* ─── DIVIDER ───────────────────────────────── */
+.divider {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 80px);
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ─── BOTTOM BAR ────────────────────────────── */
+.footerBottom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px clamp(20px, 5vw, 80px) 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.copy {
+  font-size: 12px;
+  color: #4a5568;
+  letter-spacing: 0.03em;
+}
+
+.legal {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.legalLink {
+  font-size: 12px;
+  color: #4a5568;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.legalLink:hover {
+  color: #fff;
+}
+
+/* ─── RESPONSIVE ────────────────────────────── */
+@media (max-width: 1024px) {
+  .footerTop {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .tagline { max-width: 280px; }
+}
+
+@media (max-width: 600px) {
+  .footerTop {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-top: 52px;
+    padding-bottom: 40px;
+  }
+
+  .brand {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .legal {
+    gap: 16px;
+  }
+}

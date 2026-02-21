@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 
+import useScrollReveal from "../../hooks/useScrollReveal";
 import { featuredProperties } from "../data";
 import Hero from "../../components/hero/Hero";
 import styles from "./Home.module.css";
 
+import image from "../../assets/ctaimage.jpg";
+
 export default function Home() {
+  const sectionRef = useScrollReveal()
+  const cardsRef = useScrollReveal()
+
   return (
     <main className={styles.home}>
       {/* HERO */}
@@ -59,10 +65,13 @@ export default function Home() {
       </div> */}
 
       {/* ── FEATURED PROPERTIES ────────────────── */}
-      <section className={`${styles.section} ${styles.featured}`}>
-        <div className={styles.container}>
-          <div className={styles.sectionHead}>
-            <div className={styles.sectionHeadLeft}>
+      <section
+        ref={sectionRef}
+        className={`${styles.section} ${styles.featured} reveal`}
+      >
+        <div ref={cardsRef} className={`${styles.container} reveal`}>
+          <div className={`${styles.sectionHead} reveal-delay-1`}>
+            <div className={`${styles.sectionHeadLeft} reveal-delay-2`}>
               <span className={styles.tag}>Popular</span>
               <h2 className={styles.sectionTitle}>Our Popular Homes</h2>
             </div>
@@ -107,7 +116,7 @@ export default function Home() {
       <section className={styles.quoteSection}>
         <div className={styles.quoteInner}>
           <div className={styles.quotePerson}>
-            <span className={styles.quotePersonName}>Alexander Voss</span>
+            <span className={styles.quotePersonName}>Dr. Segun Olu Ibukun</span>
             <span className={styles.quotePersonRole}>Founder, Penthouse</span>
           </div>
           <div className={styles.quoteContent}>
@@ -132,14 +141,15 @@ export default function Home() {
                 <em>Perfect Residence</em>
               </h2>
               <p className={styles.ctaBoxText}>
-                Our advisors are ready to guide you through a curated selection
-                of the world's finest addresses.
+                Explore services plots and completed homes ready for purchase.
               </p>
               <Link to="/contact" className={styles.btnPrimary}>
                 Schedule a Consultation
               </Link>
             </div>
-            <div className={styles.ctaBoxVisual} />
+            <div className={styles.ctaBoxVisual}>
+              <img src={image} />
+            </div>
           </div>
         </div>
       </section>
