@@ -1,14 +1,12 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import About from "./pages/About";
 import Properties from "./pages/Properties";
 import Offices from "./pages/Offices";
 import Contact from "./pages/Contact";
-import "./styles/global.css";
-import "./styles/pages.css";
 
 function AppContent() {
   const location = useLocation();

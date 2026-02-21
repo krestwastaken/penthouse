@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,300&display=swap');
+
+/* ─── HEADER ────────────────────────────────── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.headerScrolled {
+  border-bottom-color: #e2e8f0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+.headerInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+/* ─── LOGO ──────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoImage {
+  height: 32px;          /* adjust as needed */
+  width: auto;
+  object-fit: contain;
+}
+
+.logoIcon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Simple geometric house icon using CSS */
+.logoIcon::before {
+  content: '⌂';
+  font-size: 22px;
+  color: #2b4c8c;
+  line-height: 1;
+}
+
+.logoText {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #0d1117;
+  letter-spacing: -0.01em;
+}
+
+/* ─── DESKTOP NAV ───────────────────────────── */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.navLink {
+  font-size: 14px;
+  font-weight: 400;
+  color: #4a5568;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: #0d1117;
+  background: #f7f8fa;
+}
+
+.navLinkActive {
+  color: #0d1117;
+  font-weight: 600;
+}
+
+/* ─── CTA BUTTON ────────────────────────────── */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 22px;
+  border: 1.5px solid #0d1117;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #0d1117;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.cta:hover {
+  background: #0d1117;
+  color: #fff;
+}
+
+/* ─── HAMBURGER ─────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: #0d1117;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburgerOpen span:nth-child(1) {
+  transform: rotate(45deg) translate(4.5px, 4.5px);
+}
+.hamburgerOpen span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburgerOpen span:nth-child(3) {
+  transform: rotate(-45deg) translate(4.5px, -4.5px);
+}
+
+/* ─── MOBILE MENU ───────────────────────────── */
+.mobileMenu {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 999;
+  padding: 32px clamp(20px, 5vw, 60px);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-top: 1px solid #e2e8f0;
+}
+
+.mobileMenuOpen {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid #f0f4f8;
+  font-size: 22px;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  color: #cbd5e0;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.mobileNavLink:hover,
+.mobileNavLinkActive {
+  color: #0d1117;
+}
+
+.mobileNavNum {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: #2b4c8c;
+  font-weight: 500;
+}
+
+.mobileMenuFooter {
+  margin-top: auto;
+  padding-top: 24px;
+  font-size: 11px;
+  color: #a0aec0;
+  letter-spacing: 0.05em;
+}
+
+/* ─── RESPONSIVE ────────────────────────────── */
+@media (max-width: 768px) {
+  .nav,
+  .cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
