@@ -11,13 +11,21 @@ export default function Footer() {
         <div className={styles.brand}>
           <Link to="/" className={styles.logo}>
             <img src={logoImg} alt="Penthouse" className={styles.logoImage} />
-            <span className={styles.logoText}>Penthouse</span>
           </Link>
           <p className={styles.tagline}>
             Secure Land. Structured Estates.
             <br />
             Lasting Value.
           </p>
+
+          {/* socials */}
+          <div className={styles.socials}>
+            {["Instagram", "LinkedIn", "Twitter"].map((s) => (
+              <a key={s} href="#" className={styles.social}>
+                {s}
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Explore */}
@@ -29,20 +37,6 @@ export default function Footer() {
                 <Link to={path} className={styles.navLink}>
                   {label}
                 </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Socials */}
-        <div className={styles.navGroup}>
-          <h4 className={styles.navHeading}>Socials</h4>
-          <ul className={styles.navList}>
-            {["Instagram", "Linkedin", "Facebook", "Twitter"].map((t) => (
-              <li key={t}>
-                <a href="#" className={styles.navLink}>
-                  {t}
-                </a>
               </li>
             ))}
           </ul>

@@ -30,23 +30,9 @@
 }
 
 .logoImage {
-  height: 62px;          /* adjust as needed */
+  height: 52px;          /* adjust as needed */
   width: auto;
   object-fit: contain;
-}
-
-.logoIcon {
-  font-size: 22px;
-  color: #fff;
-  line-height: 1;
-}
-
-.logoText {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.01em;
 }
 
 .tagline {
@@ -88,6 +74,12 @@
 
 .social:hover::before {
   transform: translate(2px, -2px);
+}
+
+/* ─── NAV WRAPPER ───────────────────────────── */
+/* On desktop, acts invisible so footerTop grid controls layout */
+.navGroupsWrapper {
+  display: contents;
 }
 
 /* ─── NAV COLUMNS ───────────────────────────── */
@@ -212,7 +204,7 @@ a.contactValue:hover {
 @media (max-width: 1024px) {
   .footerTop {
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 40px;
   }
 
   .brand {
@@ -220,7 +212,7 @@ a.contactValue:hover {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 40px;
+    gap: 32px;
   }
 
   .tagline { max-width: 280px; }
@@ -228,24 +220,112 @@ a.contactValue:hover {
 
 @media (max-width: 600px) {
   .footerTop {
+    /* Single column, much tighter padding */
     grid-template-columns: 1fr;
-    gap: 36px;
-    padding-top: 52px;
-    padding-bottom: 40px;
+    gap: 0;
+    padding-top: 36px;
+    padding-bottom: 0;
   }
 
+  /* Brand row: logo + tagline side by side to save vertical space */
   .brand {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
     gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   }
 
+  .logoImage {
+    height: 40px; /* smaller logo on mobile */
+  }
+
+  /* Hide tagline and socials on mobile to save space */
+  .tagline {
+    display: none;
+  }
+
+  .socials {
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 0;
+  }
+
+  /* Collapse nav groups into a compact 2-column grid */
+  .navGroupsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .navGroup {
+    gap: 12px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .navGroup:nth-child(odd) {
+    padding-right: 16px;
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .navGroup:nth-child(even) {
+    padding-left: 16px;
+  }
+
+  .navHeading {
+    font-size: 9px;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+  }
+
+  .navList {
+    gap: 8px;
+  }
+
+  .navLink {
+    font-size: 12px;
+  }
+
+  /* Contact column spans full width */
+  .contactGroup {
+    grid-column: 1 / -1;
+    border-right: none !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* Contact items in a row on mobile */
+  .contactList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+  }
+
+  .contactValue {
+    font-size: 12px;
+  }
+
+  /* Bottom bar stacks and tightens */
   .footerBottom {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 12px;
+    padding-top: 20px;
+    padding-bottom: 28px;
+  }
+
+  .copy {
+    font-size: 11px;
   }
 
   .legal {
-    gap: 16px;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .legalLink {
+    font-size: 11px;
   }
 }
