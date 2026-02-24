@@ -39,7 +39,7 @@ export default function Hero() {
         <p className={styles.heroSub}>
           Curating the world's most extraordinary residences
           <br className={styles.hideMobile} />
-          for those who demand the exceptional.
+           for those who demand the exceptional.
         </p>
         <div className={styles.heroActions}>
           <Link to="/properties" className={styles.btnPrimary}>
