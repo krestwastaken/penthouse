@@ -17,7 +17,7 @@ export default function Home() {
       <Hero />
 
       {/* ── SEARCH BAR ─────────────────────────── */}
-      <div className={styles.searchBar}>
+      {/* <div className={styles.searchBar}>
         <div className={styles.searchBarInner}>
           <p className={styles.searchLabel}>Search for available properties</p>
 
@@ -62,7 +62,7 @@ export default function Home() {
 
           <button className={styles.searchBtn}>Search Now</button>
         </div>
-      </div>
+      </div> */}
 
       {/* ── FEATURED PROPERTIES ────────────────── */}
       <section
