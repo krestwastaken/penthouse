@@ -48,8 +48,11 @@ export default function Footer() {
           <ul className={styles.contactList}>
             <li className={styles.contactItem}>
               <span className={styles.contactLabel}>Phone</span>
-              <a href="tel:+1800PENTHOUSE" className={styles.navLink}>
-                +1 800 PENTHOUSE
+              <a href="tel:+234 803 311 2640" className={styles.navLink}>
+                +234 803 311 2640
+              </a>
+              <a href="tel:+234 802 669 4177" className={styles.navLink}>
+                +234 802 669 4177
               </a>
             </li>
             <li className={styles.contactItem}>
