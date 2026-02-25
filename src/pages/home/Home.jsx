@@ -16,54 +16,6 @@ export default function Home() {
       {/* HERO */}
       <Hero />
 
-      {/* ── SEARCH BAR ─────────────────────────── */}
-      {/* <div className={styles.searchBar}>
-        <div className={styles.searchBarInner}>
-          <p className={styles.searchLabel}>Search for available properties</p>
-
-          <div className={styles.searchField}>
-            <span className={styles.searchIcon}>📍</span>
-            <select defaultValue="">
-              <option value="" disabled>
-                Location
-              </option>
-              <option>New York</option>
-              <option>Los Angeles</option>
-              <option>Miami</option>
-              <option>London</option>
-              <option>Dubai</option>
-            </select>
-          </div>
-
-          <div className={styles.searchField}>
-            <span className={styles.searchIcon}>🏠</span>
-            <select defaultValue="">
-              <option value="" disabled>
-                Property Type
-              </option>
-              <option>Penthouse</option>
-              <option>Villa</option>
-              <option>Residence</option>
-            </select>
-          </div>
-
-          <div className={styles.searchField}>
-            <span className={styles.searchIcon}>💰</span>
-            <select defaultValue="">
-              <option value="" disabled>
-                Budget
-              </option>
-              <option>Under $1M</option>
-              <option>$1M – $5M</option>
-              <option>$5M – $15M</option>
-              <option>$15M+</option>
-            </select>
-          </div>
-
-          <button className={styles.searchBtn}>Search Now</button>
-        </div>
-      </div> */}
-
       {/* ── FEATURED PROPERTIES ────────────────── */}
       <section
         ref={sectionRef}

@@ -78,7 +78,7 @@
 .navLink {
   font-size: 14px;
   font-weight: 400;
-  color: #4a5568;
+  color: #2b4c8c;
   text-decoration: none;
   padding: 6px 14px;
   border-radius: 4px;
@@ -87,12 +87,12 @@
 }
 
 .navLink:hover {
-  color: #0d1117;
+  color: #193d84;
   background: #f7f8fa;
 }
 
 .navLinkActive {
-  color: #0d1117;
+  color: #204898;
   font-weight: 600;
 }
 
@@ -200,7 +200,7 @@
 
 .mobileNavLink:hover,
 .mobileNavLinkActive {
-  color: #0d1117;
+  color: #2b4c8c;
 }
 
 .mobileNavNum {

@@ -37,9 +37,9 @@ export default function Hero() {
           That Suits <em>You</em>
         </h1>
         <p className={styles.heroSub}>
-          Curating the world's most extraordinary residences
+          Secure Land. Structured Estates.
           <br className={styles.hideMobile} />
-           for those who demand the exceptional.
+          Lasting Value.
         </p>
         <div className={styles.heroActions}>
           <Link to="/properties" className={styles.btnPrimary}>
@@ -54,10 +54,9 @@ export default function Hero() {
       {/* Stats bar */}
       <div className={styles.heroStats}>
         {[
-          { num: "300+", label: "Properties Sold" },
-          { num: "$4.2B", label: "In Total Sales" },
-          { num: "18", label: "Global Offices" },
-          { num: "25+", label: "Years of Excellence" },
+          { num: "100+", label: "Properties Sold" },
+          { num: "₦750.2M", label: "In Total Sales" },
+          { num: "5+", label: "Years of Excellence" },
         ].map(({ num, label }) => (
           <div key={label} className={styles.heroStat}>
             <span className={styles.heroStatNum}>{num}</span>
