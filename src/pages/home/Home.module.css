@@ -185,8 +185,9 @@
 .propertyCardImgInner {
   width: 100%;
   height: 100%;
-  /* swap for: background-image: url(...); background-size: cover; */
-  background: linear-gradient(160deg, #2d3f55 0%, #1a2538 100%);
+  object-fit: cover;       /* fills the box without stretching */
+  object-position: center; /* crops from the center */
+  display: block;
   transition: transform 0.55s ease;
 }
 

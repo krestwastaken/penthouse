@@ -1,35 +1,43 @@
+import pentHouse3bd from '../assets/properties/3-BDD.jpg'
+import pentHouse3bdwbq from "../assets/properties/3-BDDwBQ.jpg";
+import pentHouse3bsd from "../assets/properties/3-BSD.jpg";
+import pentHouse3bsd2 from "../assets/properties/3-BSD2.jpg";
+import pentHouse4bd from "../assets/properties/4-BDD.jpg";
+import pentHouse4bdwbq from "../assets/properties/4-BDDwBQ.jpg";
+
 // Home Page
 export const featuredProperties = [
   {
     id: 1,
-    name: "Sky Penthouse",
+    name: "3-Bedroom Detached Duplex",
+    image: pentHouse3bd,
     location: "Manhattan, New York",
     price: "$12.4M",
-    beds: 4,
+    beds: 3,
     sqft: "5,200 sqft",
     tag: "Exclusive",
   },
   {
     id: 2,
-    name: "Glass Villa",
+    name: "3-Bedroom Detached Duplex with BQ",
+    image: pentHouse3bdwbq,
     location: "Beverly Hills, CA",
     price: "$8.9M",
-    beds: 5,
+    beds: 3,
     sqft: "7,800 sqft",
     tag: "New Listing",
   },
   {
     id: 3,
-    name: "The Terrace",
+    name: "4-Bedroom Detached Duplex",
+    image: pentHouse4bd,
     location: "Miami Beach, FL",
     price: "$5.6M",
-    beds: 3,
+    beds: 4,
     sqft: "$3,400 sqft",
     tag: "Featured",
   },
 ];
-
-
 
 // About Page
 export const team = [
@@ -78,8 +86,6 @@ export const cards = [
   },
 ];
 
-
-
 //Contact Page
 export const contacts = [
   {
@@ -104,10 +110,9 @@ export const contacts = [
   },
 ];
 
-
-
 // Offices page
 export const offices = [
+
   {
     id: 1,
     city: "New York",
@@ -170,38 +175,50 @@ export const offices = [
   },
 ];
 
-
-
-
 //Properties page
 export const properties = [
   {
     id: 1,
-    name: "Sky Penthouse",
+    name: "3-Bedroom Detached Duplex",
+    image: pentHouse3bd,
     location: "Manhattan, New York",
     price: "$12.4M",
-    beds: 4,
-    baths: 4,
+    beds: 3,
+    baths: 3,
+    sqft: "5,200 sqft",
+    status: "For Sale",
+    tag: "Exclusive",
+  },
+  {
+    id: 2,
+    name: "3-Bedroom Detached Duplex with BQ",
+    image: pentHouse3bdwbq,
+    location: "Manhattan, New York",
+    price: "$12.4M",
+    beds: 3,
+    baths: 3,
     sqft: "5,200",
     type: "Penthouse",
     status: "For Sale",
     tag: "Exclusive",
   },
   {
-    id: 2,
-    name: "Glass Villa",
+    id: 3,
+    name: "3-Bedroom Semi-Detached Duplex (Side)",
+    image: pentHouse3bsd,
     location: "Beverly Hills, CA",
     price: "$8.9M",
-    beds: 5,
-    baths: 6,
+    beds: 3,
+    baths: 3,
     sqft: "7,800",
     type: "Villa",
     status: "For Sale",
     tag: "New",
   },
   {
-    id: 3,
-    name: "The Terrace",
+    id: 4,
+    name: "3-Bedroom Semi-Detached Duplex",
+    image: pentHouse3bsd2,
     location: "Miami Beach, FL",
     price: "$5.6M",
     beds: 3,
@@ -212,8 +229,9 @@ export const properties = [
     tag: "Featured",
   },
   {
-    id: 4,
-    name: "Harbour Crest",
+    id: 5,
+    name: "4-Bedroom Detached Duplex",
+    image: pentHouse4bd,
     location: "Sydney, Australia",
     price: "$7.2M",
     beds: 4,
@@ -224,8 +242,9 @@ export const properties = [
     tag: null,
   },
   {
-    id: 5,
-    name: "Maison Lumière",
+    id: 6,
+    name: "4-Bedroom Detached Duplex with BQ",
+    image: pentHouse4bdwbq,
     location: "Paris, France",
     price: "$15.1M",
     beds: 6,
@@ -234,18 +253,6 @@ export const properties = [
     type: "Villa",
     status: "For Sale",
     tag: "Exclusive",
-  },
-  {
-    id: 6,
-    name: "The Apex",
-    location: "Dubai, UAE",
-    price: "$22.0M",
-    beds: 5,
-    baths: 6,
-    sqft: "8,400",
-    type: "Penthouse",
-    status: "For Sale",
-    tag: "New",
   },
 ];
 

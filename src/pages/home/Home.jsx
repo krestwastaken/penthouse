@@ -7,6 +7,7 @@ import styles from "./Home.module.css";
 
 import image from "../../assets/ctaimage.jpg";
 
+
 export default function Home() {
   const sectionRef = useScrollReveal()
   const cardsRef = useScrollReveal()
@@ -35,12 +36,19 @@ export default function Home() {
           <div className={styles.propertyGrid}>
             {featuredProperties.map((p) => (
               <div key={p.id} className={styles.propertyCard}>
+                {/* Image + badge wrapped together */}
                 <div className={styles.propertyCardImg}>
-                  <div className={styles.propertyCardImgInner} />
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className={styles.propertyCardImgInner}
+                  />
                   {p.tag && (
                     <span className={styles.propertyCardTagBadge}>{p.tag}</span>
                   )}
                 </div>
+
+                {/* Text content below */}
                 <div className={styles.propertyCardBody}>
                   <h3 className={styles.propertyCardName}>{p.name}</h3>
                   <p className={styles.propertyCardLocation}>{p.location}</p>
