@@ -5,7 +5,7 @@ import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About"
 import Properties from "./pages/properties/Properties";
-// import Offices from "./pages/Offices";
+import FacilityManagement from "./pages/facility/FacilityManagement";
 import Contact from "./pages/contact/Contact";
 
 function AppContent() {
@@ -23,7 +23,7 @@ function AppContent() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/properties" element={<Properties />} />
-        {/* <Route path="/offices" element={<Offices />} /> */}
+        <Route path="/facility-management" element={<FacilityManagement />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

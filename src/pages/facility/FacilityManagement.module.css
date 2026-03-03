@@ -1,0 +1,648 @@
+/* =============================================
+   FacilityManagement.module.css
+   ============================================= */
+
+/* ─── BASE ──────────────────────────────────── */
+.page {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  background: #f0f4f8;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: clamp(48px, 8vw, 100px) 0;
+}
+
+.sectionDark {
+  padding: clamp(48px, 8vw, 100px) 0;
+  background: #0d1117;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 5vw, 80px);
+}
+
+.tag {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #718096;
+  font-weight: 500;
+}
+
+.tagLight {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.goldLine {
+  width: 36px;
+  height: 2px;
+  background: #0d1117;
+  display: block;
+  flex-shrink: 0;
+}
+
+.goldLineDark {
+  width: 36px;
+  height: 2px;
+  background: #2b4c8c;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ─── BUTTONS ───────────────────────────────── */
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: #0d1117;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  align-self: flex-start;
+}
+
+.btnPrimary:hover {
+  background: #1a2332;
+  transform: translateY(-1px);
+}
+
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 30px;
+  background: transparent;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.btnOutline:hover {
+  border-color: #fff;
+  background: #fff;
+  color: #0d1117;
+}
+
+.btnWhatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: #25d366;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btnWhatsapp:hover {
+  background: #1ebe5d;
+  transform: translateY(-1px);
+}
+
+/* ─── WHO IS IT FOR ─────────────────────────── */
+.whoSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.whoText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.whoEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.whoTitle {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 700;
+  color: #0d1117;
+  line-height: 1.15;
+}
+
+.whoTitle em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.whoBody {
+  font-size: 14px;
+  color: #718096;
+  line-height: 1.9;
+}
+
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 4px 0;
+}
+
+.serviceItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #0d1117;
+  font-weight: 500;
+}
+
+.serviceItem::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2b4c8c;
+  flex-shrink: 0;
+}
+
+.whoVisual {
+  position: relative;
+  height: 460px;
+}
+
+.visualMain {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  right: 0;
+  bottom: 60px;
+  background: linear-gradient(135deg, #b8ccd8 0%, #7fa0b5 100%);
+  overflow: hidden;
+}
+
+.visualMain img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.visualAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 160px;
+  height: 180px;
+  background: #0d1117;
+}
+
+.floatBadge {
+  position: absolute;
+  bottom: 88px;
+  right: -16px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 16px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.floatBadgeNum {
+  font-family: 'Fraunces', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #0d1117;
+  line-height: 1;
+}
+
+.floatBadgeLabel {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #718096;
+}
+
+/* ─── WHAT WE MANAGE ────────────────────────── */
+.manageGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  margin-top: 52px;
+}
+
+.manageCard {
+  background: #1a2332;
+  padding: 32px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.3s ease;
+}
+
+.manageCard:hover {
+  background: #1e2a3d;
+}
+
+.manageIcon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.manageTitle {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.manageText {
+  font-size: 12px;
+  color: #718096;
+  line-height: 1.75;
+}
+
+.manageSectionHead {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.manageSectionHead h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(24px, 4vw, 46px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.manageSectionHead h2 em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.manageSectionHead p {
+  font-size: 14px;
+  color: #718096;
+  line-height: 1.8;
+  max-width: 560px;
+}
+
+/* ─── WHY IT PROTECTS VALUE ─────────────────── */
+.valueSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.valueText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.valueEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.valueTitle {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(24px, 3.5vw, 42px);
+  font-weight: 700;
+  color: #0d1117;
+  line-height: 1.15;
+}
+
+.valueTitle em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.valueBody {
+  font-size: 14px;
+  color: #718096;
+  line-height: 1.9;
+}
+
+.valuePoints {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.valuePoint {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.25s ease;
+}
+
+.valuePoint:hover {
+  border-color: #0d1117;
+}
+
+.valuePointIcon {
+  font-size: 18px;
+}
+
+.valuePointLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0d1117;
+  letter-spacing: 0.02em;
+}
+
+.valueImg {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #b8ccd8 0%, #7fa0b5 100%);
+}
+
+.valueImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── POPUP OVERLAY ─────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease;
+}
+
+.popup {
+  background: #fff;
+  width: 100%;
+  max-width: 480px;
+  padding: clamp(28px, 5vw, 48px);
+  position: relative;
+  animation: slideUp 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.popupClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #718096;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.popupClose:hover {
+  color: #0d1117;
+}
+
+.popupTitle {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  color: #0d1117;
+  margin-bottom: 6px;
+  line-height: 1.2;
+  padding-right: 32px;
+}
+
+.popupSub {
+  font-size: 13px;
+  color: #718096;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.popupForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formLabel {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #718096;
+  font-weight: 500;
+}
+
+.formInput {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #0d1117;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.formInput:focus {
+  border-color: #0d1117;
+  background: #fff;
+}
+
+.formInput::placeholder {
+  color: #a0aec0;
+}
+
+.formSelect {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23718096' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-color: #f8fafc;
+  padding-right: 32px;
+}
+
+.popupDivider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0;
+}
+
+.popupDivider::before,
+.popupDivider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.popupDividerText {
+  font-size: 11px;
+  color: #a0aec0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.popupSuccess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 32px 0;
+}
+
+.popupSuccessIcon {
+  font-size: 32px;
+  color: #2b4c8c;
+}
+
+.popupSuccess h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0d1117;
+}
+
+.popupSuccess p {
+  font-size: 13px;
+  color: #718096;
+  line-height: 1.7;
+}
+
+/* ─── ANIMATIONS ────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── RESPONSIVE ────────────────────────────── */
+@media (max-width: 1024px) {
+  .manageGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .whoSection,
+  .valueSection {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .whoSection,
+  .valueSection {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .whoVisual {
+    height: 300px;
+    order: -1;
+  }
+
+  .visualMain {
+    left: 40px;
+    bottom: 40px;
+  }
+
+  .visualAccent {
+    width: 110px;
+    height: 120px;
+  }
+
+  .floatBadge {
+    right: 0;
+    bottom: 56px;
+  }
+
+  .manageGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .valueImg {
+    height: 260px;
+    order: -1;
+  }
+
+  .valuePoints {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .manageGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .valuePoints {
+    grid-template-columns: 1fr;
+  }
+
+  .btnPrimary,
+  .btnOutline,
+  .btnWhatsapp {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .whoVisual {
+    height: 240px;
+  }
+}
