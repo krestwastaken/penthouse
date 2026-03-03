@@ -4,9 +4,9 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About"
-import Properties from "./pages/Properties";
-import Offices from "./pages/Offices";
-import Contact from "./pages/Contact";
+import Properties from "./pages/properties/Properties";
+// import Offices from "./pages/Offices";
+import Contact from "./pages/contact/Contact";
 
 function AppContent() {
   const location = useLocation();
@@ -23,7 +23,7 @@ function AppContent() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/properties" element={<Properties />} />
-        <Route path="/offices" element={<Offices />} />
+        {/* <Route path="/offices" element={<Offices />} /> */}
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

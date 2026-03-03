@@ -17,6 +17,25 @@ export default function Home() {
       {/* HERO */}
       <Hero />
 
+      {/* ── MARQUEE STRIP ──────────────────────── */}
+      <div className={styles.marqueeStrip}>
+        <div className={styles.marqueeTrack}>
+          {/* Repeated twice so the scroll loops seamlessly */}
+          {[0, 1].map((i) => (
+            <span key={i} className={styles.marqueeContent}>
+              With decades of expertise in real estate, we develop premium
+              residential estates and provide end-to-end property management for
+              property owners and investors.
+              <span className={styles.marqueeDot}>◆</span>
+              With decades of expertise in real estate, we develop premium
+              residential estates and provide end-to-end property management for
+              property owners and investors.
+              <span className={styles.marqueeDot}>◆</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* ── FEATURED PROPERTIES ────────────────── */}
       <section
         ref={sectionRef}

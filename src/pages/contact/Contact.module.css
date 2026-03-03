@@ -1,0 +1,389 @@
+/* =============================================
+   Contact.module.css — Matches site aesthetic
+   ============================================= */
+
+/* ─── BASE ──────────────────────────────────── */
+.contact {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  background: #f0f4f8;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: clamp(48px, 8vw, 100px) 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 5vw, 80px);
+}
+
+/* ─── LAYOUT ────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ─── INFO SIDE ─────────────────────────────── */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  position: sticky;
+  top: 100px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.goldLine {
+  width: 36px;
+  height: 2px;
+  background: #0d1117;
+  display: block;
+}
+
+.infoTitle {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(26px, 3.5vw, 40px);
+  font-weight: 700;
+  color: #0d1117;
+  line-height: 1.15;
+}
+
+.infoTitle em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.infoText {
+  font-size: 14px;
+  color: #718096;
+  line-height: 1.85;
+}
+
+.tagline {
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: #2b4c8c;
+  letter-spacing: 0.03em;
+}
+
+/* ─── CONTACT CHANNELS ──────────────────────── */
+.channels {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  overflow: hidden;
+}
+
+.channel {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f4f8;
+  transition: background 0.2s ease;
+}
+
+.channel:last-child {
+  border-bottom: none;
+}
+
+.channel:hover {
+  background: #f8fafc;
+}
+
+.channelIcon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  width: 20px;
+  text-align: center;
+}
+
+.channelBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.channelLabel {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #2b4c8c;
+  font-weight: 600;
+}
+
+.channelValue {
+  font-size: 13px;
+  color: #4a5568;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.channelLink {
+  font-size: 13px;
+  color: #4a5568;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  word-break: break-word;
+}
+
+.channelLink:hover {
+  color: #0d1117;
+}
+
+/* ─── SOCIALS ROW ───────────────────────────── */
+.socialsRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.socialBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #4a5568;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.socialBtn:hover {
+  border-color: #0d1117;
+  background: #0d1117;
+  color: #fff;
+}
+
+.socialIcon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* ─── RC / LEGAL ────────────────────────────── */
+.legalNote {
+  font-size: 11px;
+  color: #a0aec0;
+  letter-spacing: 0.05em;
+  padding-top: 4px;
+}
+
+/* ─── MAP EMBED ─────────────────────────────── */
+.mapWrap {
+  width: 100%;
+  aspect-ratio: 16/7;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  background: #e2e8f0;
+  position: relative;
+}
+
+.mapWrap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.mapLabel {
+  font-size: 11px;
+  color: #718096;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ─── FORM SIDE ─────────────────────────────── */
+.formWrap {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: clamp(24px, 4vw, 48px);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.formFieldFull {
+  grid-column: 1 / -1;
+}
+
+.formLabel {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #718096;
+  font-weight: 500;
+}
+
+.formInput {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #0d1117;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  padding: 13px 15px;
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+}
+
+.formInput:focus {
+  border-color: #0d1117;
+  background: #fff;
+}
+
+.formInput::placeholder {
+  color: #a0aec0;
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 130px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.formSelect {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23718096' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-color: #f8fafc;
+  padding-right: 36px;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: flex-start;
+  padding: 14px 36px;
+  background: #0d1117;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submitBtn:hover {
+  background: #1a2332;
+  transform: translateY(-1px);
+}
+
+/* ─── SUCCESS STATE ─────────────────────────── */
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  padding: 60px 32px;
+  min-height: 300px;
+}
+
+.successIcon {
+  font-size: 36px;
+  color: #2b4c8c;
+  opacity: 0.7;
+}
+
+.success h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0d1117;
+}
+
+.success p {
+  font-size: 14px;
+  color: #718096;
+  line-height: 1.8;
+  max-width: 300px;
+}
+
+/* ─── RESPONSIVE ────────────────────────────── */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .info {
+    position: static;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .formWrap {
+    padding: 24px 16px;
+  }
+
+  .submitBtn {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .socialsRow {
+    gap: 8px;
+  }
+
+  .socialBtn {
+    flex: 1 1 calc(50% - 4px);
+    justify-content: center;
+  }
+}
