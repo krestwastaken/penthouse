@@ -1,27 +1,43 @@
-/* ─── HERO ──────────────────────────────────── */
+/* ─── HERO BASE ─────────────────────────────── */
 .hero {
   position: relative;
   background: #dce8f0;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
+/* Full height — Home page only */
+.heroFull {
+  min-height: 100vh;
+}
+
+/* Compact — all inner pages */
+.heroCompact {
+  min-height: 340px;
+  padding-top: 100px; /* clears fixed header */
+}
+
+/* ─── BACKGROUND ────────────────────────────── */
 .heroBgWrap {
   position: absolute;
   top: 0;
   right: 0;
   width: 52%;
-  height: 85%;
+  height: 100%;
   z-index: 0;
   overflow: hidden;
+}
+
+/* Hide the split bg on compact hero — full bleed instead */
+.heroCompact .heroBgWrap {
+  width: 100%;
+  opacity: 0.35;
 }
 
 .heroBg {
   width: 100%;
   height: 100%;
-  /* Replace with: background-image: url('/your-hero.jpg'); background-size: cover; */
   background: linear-gradient(135deg, #b8ccd8 0%, #7fa0b5 40%, #4e7a96 100%);
   background-size: cover;
   background-position: center;
@@ -29,36 +45,53 @@
   transition: transform 0.12s linear;
 }
 
-.heroOverlay {
-  display: none;
+.heroCompact .heroBg {
+  clip-path: none;
 }
 
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(220, 232, 240, 0.6) 30%, transparent 100%);
+}
+
+.heroCompact .heroOverlay {
+  background: linear-gradient(to bottom, rgba(220, 232, 240, 0.5) 0%, rgba(220, 232, 240, 0.85) 100%);
+}
+
+/* ─── CONTENT ───────────────────────────────── */
 .heroContent {
   position: relative;
   z-index: 2;
-  padding-top: clamp(120px, 16vh, 180px);
-  padding-bottom: 40px;
+  padding-top: clamp(100px, 14vh, 160px);
+  padding-bottom: clamp(32px, 5vh, 56px);
   padding-left: clamp(20px, 8vw, 140px);
   padding-right: clamp(20px, 5vw, 60px);
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 580px;
+  max-width: 640px;
+}
+
+.heroCompact .heroContent {
+  padding-top: clamp(24px, 4vh, 48px);
+  padding-bottom: clamp(32px, 5vh, 52px);
+  max-width: 700px;
 }
 
 .heroEyebrow {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   animation: fadeUp 0.7s ease both;
 }
 
 .goldLine {
   width: 36px;
   height: 2px;
-  background: #111;
+  background: #0d1117;
   display: block;
   flex-shrink: 0;
 }
@@ -67,18 +100,26 @@
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #555;
+  color: #4a5568;
   font-weight: 500;
 }
 
 .heroTitle {
   font-family: 'Fraunces', Georgia, serif;
-  font-size: clamp(48px, 7vw, 88px);
   font-weight: 700;
-  line-height: 1.02;
+  line-height: 1.05;
   color: #0d1117;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   animation: fadeUp 0.7s 0.08s ease both;
+}
+
+/* Bigger title on full hero, smaller on compact */
+.heroFull .heroTitle {
+  font-size: clamp(44px, 7vw, 88px);
+}
+
+.heroCompact .heroTitle {
+  font-size: clamp(30px, 5vw, 58px);
 }
 
 .heroTitle em {
@@ -87,14 +128,19 @@
 }
 
 .heroSub {
-  font-size: clamp(14px, 1.4vw, 16px);
+  font-size: clamp(13px, 1.4vw, 15px);
   color: #4a5568;
   line-height: 1.75;
-  margin-bottom: 36px;
-  max-width: 380px;
+  margin-bottom: 32px;
+  max-width: 400px;
   animation: fadeUp 0.7s 0.16s ease both;
 }
 
+.heroCompact .heroSub {
+  margin-bottom: 0;
+}
+
+/* ─── ACTIONS ───────────────────────────────── */
 .heroActions {
   display: flex;
   align-items: center;
@@ -106,13 +152,12 @@
 .btnPrimary {
   display: inline-flex;
   align-items: center;
-  padding: 15px 36px;
+  padding: 14px 32px;
   background: #0d1117;
   color: #fff;
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.04em;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.2s ease;
 }
@@ -124,7 +169,7 @@
 
 .heroLink {
   font-size: 13px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: #4a5568;
   text-decoration: none;
   display: flex;
@@ -142,35 +187,37 @@
   display: flex;
   align-items: center;
   gap: 48px;
-  padding: 32px clamp(20px, 8vw, 140px);
-  animation: fadeUp 0.7s 0.36s ease both;
+  padding: 28px clamp(20px, 8vw, 140px);
   flex-wrap: wrap;
+  animation: fadeUp 0.7s 0.36s ease both;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  background: rgba(220, 232, 240, 0.5);
 }
 
 .heroStat {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .heroStatNum {
   font-family: 'Fraunces', serif;
-  font-size: clamp(24px, 3vw, 36px);
+  font-size: clamp(22px, 3vw, 34px);
   font-weight: 700;
   color: #0d1117;
   line-height: 1;
 }
 
 .heroStatLabel {
-  font-size: 11px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.1em;
   color: #718096;
   text-transform: uppercase;
 }
 
 /* ─── ANIMATION ─────────────────────────────── */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(22px); }
+  from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -179,12 +226,24 @@
 /* ─── RESPONSIVE ────────────────────────────── */
 @media (max-width: 900px) {
   .heroBgWrap { display: none; }
+  .heroCompact .heroBgWrap { display: block; width: 100%; }
   .heroContent { max-width: 100%; }
-  .heroStats { gap: 32px; }
+  .heroStats { gap: 28px; }
 }
 
 @media (max-width: 600px) {
-  .heroStats { gap: 24px; }
+  .heroCompact {
+    min-height: 260px;
+  }
+
+  .heroStats { gap: 20px; }
   .heroStat { flex: 1 1 40%; }
   .hideMobile { display: none; }
+
+  .heroActions { gap: 16px; }
+
+  .btnPrimary {
+    width: 100%;
+    justify-content: center;
+  }
 }

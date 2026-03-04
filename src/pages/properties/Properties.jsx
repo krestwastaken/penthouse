@@ -100,7 +100,7 @@ export default function Properties() {
                   </div>
                   <div className={styles.cardFooter}>
                     <span className={styles.cardPrice}>{p.price}</span>
-                    <button className={styles.cardCta}>Enquire</button>
+                    {/* <button className={styles.cardCta}>Enquire</button> */}
                   </div>
                 </div>
               </div>

@@ -15,7 +15,29 @@ export default function Home() {
   return (
     <main className={styles.home}>
       {/* HERO */}
-      <Hero />
+      <Hero
+        size="full"
+        showStats={true}
+        showActions={true}
+        stats={[
+          { num: "100+", label: "Properties Sold" },
+          { num: "₦750.2M", label: "In Total Sales" },
+          { num: "5+", label: "Years of Excellence" },
+        ]}
+        tag="Luxury Real Estate"
+        title={
+          <>
+            Find A Home
+            <br />
+            That Suits <em>You</em>
+          </>
+        }
+        subtitle="Secure Land. Structured Estates. Lasting Value."
+        ctaLabel="View Properties"
+        ctaPath="/properties"
+        secondaryLabel="Our Story"
+        secondaryPath="/about"
+      />
 
       {/* ── MARQUEE STRIP ──────────────────────── */}
       <div className={styles.marqueeStrip}>

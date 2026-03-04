@@ -9,6 +9,7 @@ export default function About() {
       {/* ── HERO ───────────────────────────────── */}
       <Hero
         tag="Our Story"
+        
         title={
           <>
             Defining Luxury,
@@ -16,7 +17,7 @@ export default function About() {
             <em>One Address at a Time</em>
           </>
         }
-        subtitle="Two decades of curating the world's most extraordinary residential properties."
+        subtitle="Two decades of curating extraordinary properties."
       />
 
       {/* ── MISSION ────────────────────────────── */}

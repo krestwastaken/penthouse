@@ -2,10 +2,29 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
 
-export default function Hero() {
+export default function Hero({
+  tag = "Luxury Real Estate",
+  title = (
+    <>
+      Find A Home
+      <br />
+      That Suits <em>You</em>
+    </>
+  ),
+  subtitle = "Secure Land. Structured Estates. Lasting Value.",
+  showActions = false,
+  ctaLabel = "View Properties",
+  ctaPath = "/properties",
+  secondaryLabel = "Our Story",
+  secondaryPath = "/about",
+  showStats = false,
+  stats = [],
+  size = "compact",
+}) {
   const heroRef = useRef(null);
 
   useEffect(() => {
+    if (size !== "full") return;
     const el = heroRef.current;
     if (!el) return;
     const onMove = (e) => {
@@ -17,10 +36,12 @@ export default function Hero() {
     };
     window.addEventListener("mousemove", onMove);
     return () => window.removeEventListener("mousemove", onMove);
-  }, []);
+  }, [size]);
 
   return (
-    <section className={styles.hero}>
+    <section
+      className={`${styles.hero} ${size === "full" ? styles.heroFull : styles.heroCompact}`}
+    >
       <div className={styles.heroBgWrap}>
         <div className={styles.heroBg} ref={heroRef} />
         <div className={styles.heroOverlay} />
@@ -29,41 +50,35 @@ export default function Hero() {
       <div className={styles.heroContent}>
         <div className={styles.heroEyebrow}>
           <span className={styles.goldLine} />
-          <span className={styles.tag}>Luxury Real Estate</span>
+          <span className={styles.tag}>{tag}</span>
         </div>
-        <h1 className={styles.heroTitle}>
-          Find A Home
-          <br />
-          That Suits <em>You</em>
-        </h1>
-        <p className={styles.heroSub}>
-          Secure Land. Structured Estates.
-          <br className={styles.hideMobile} />
-          Lasting Value.
-        </p>
-        <div className={styles.heroActions}>
-          <Link to="/properties" className={styles.btnPrimary}>
-            View Properties
-          </Link>
-          <Link to="/about" className={styles.heroLink}>
-            Our Story <span>→</span>
-          </Link>
-        </div>
+
+        <h1 className={styles.heroTitle}>{title}</h1>
+
+        {subtitle && <p className={styles.heroSub}>{subtitle}</p>}
+
+        {showActions && (
+          <div className={styles.heroActions}>
+            <Link to={ctaPath} className={styles.btnPrimary}>
+              {ctaLabel}
+            </Link>
+            <Link to={secondaryPath} className={styles.heroLink}>
+              {secondaryLabel} <span>→</span>
+            </Link>
+          </div>
+        )}
       </div>
 
-      {/* Stats bar */}
-      <div className={styles.heroStats}>
-        {[
-          { num: "100+", label: "Properties Sold" },
-          { num: "₦750.2M", label: "In Total Sales" },
-          { num: "5+", label: "Years of Excellence" },
-        ].map(({ num, label }) => (
-          <div key={label} className={styles.heroStat}>
-            <span className={styles.heroStatNum}>{num}</span>
-            <span className={styles.heroStatLabel}>{label}</span>
-          </div>
-        ))}
-      </div>
+      {showStats && stats.length > 0 && (
+        <div className={styles.heroStats}>
+          {stats.map(({ num, label }) => (
+            <div key={label} className={styles.heroStat}>
+              <span className={styles.heroStatNum}>{num}</span>
+              <span className={styles.heroStatLabel}>{label}</span>
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }
