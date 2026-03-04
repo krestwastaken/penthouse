@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
-
+import heroImg from '../../assets/properties/3-BDD.jpg'
+import compactHeroImg from '../../assets/properties/3-BSD.jpg'
 export default function Hero({
   tag = "Luxury Real Estate",
   title = (
@@ -20,6 +21,8 @@ export default function Hero({
   showStats = false,
   stats = [],
   size = "compact",
+  heroImage = heroImg,
+  compactImage = compactHeroImg,
 }) {
   const heroRef = useRef(null);
 
@@ -77,6 +80,24 @@ export default function Hero({
               <span className={styles.heroStatLabel}>{label}</span>
             </div>
           ))}
+        </div>
+      )}
+
+      {/* Property image — right side, full hero only */}
+      {heroImage && size === "full" && (
+        <div className={styles.heroImageWrap}>
+          <img
+            src={heroImage}
+            alt="Featured property"
+            className={styles.heroImage}
+          />
+        </div>
+      )}
+
+      {/* Compact hero image */}
+      {compactImage && size === "compact" && (
+        <div className={styles.heroImageWrapCompact}>
+          <img src={compactImage} alt="" className={styles.heroImageCompact} />
         </div>
       )}
     </section>

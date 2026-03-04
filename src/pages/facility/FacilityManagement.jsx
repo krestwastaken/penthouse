@@ -14,6 +14,7 @@ export default function FacilityManagement() {
       {/* ── HERO ───────────────────────────────── */}
       <Hero
         tag="Facility Management"
+        size="compact"
         title={
           <>
             Your Property,

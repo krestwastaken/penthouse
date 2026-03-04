@@ -9,7 +9,6 @@ export default function About() {
       {/* ── HERO ───────────────────────────────── */}
       <Hero
         tag="Our Story"
-        
         title={
           <>
             Defining Luxury,
