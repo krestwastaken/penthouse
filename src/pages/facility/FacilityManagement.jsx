@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Hero from "../../components/hero/Hero";
 import styles from "./FacilityManagement.module.css";
+import facilityImg from '../../assets/facilityimgs/facilityImg.jpg'
 
 import { services, whatWeManage, valuePoints } from "./facilityData";
 
@@ -66,7 +67,9 @@ export default function FacilityManagement() {
             </div>
 
             <div className={styles.whoVisual}>
-              <div className={styles.visualMain} />
+              <div className={styles.visualMain} >
+                <img src={facilityImg} alt="Facility Management"/>
+              </div>
               <div className={styles.visualAccent} />
               <div className={styles.floatBadge}>
                 <span className={styles.floatBadgeNum}>100%</span>

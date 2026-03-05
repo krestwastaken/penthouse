@@ -1,11 +1,9 @@
-import { useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { properties } from "../data";
 import styles from "./PropertyDetail.module.css";
 
 export default function PropertyDetail() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const property = properties.find((p) => String(p.id) === String(id));
 
   if (!property) {
@@ -29,14 +27,11 @@ export default function PropertyDetail() {
     beds,
     baths,
     sqft,
-    tag,
     image,
-    images = [], // array of extra images if available
     description,
-    features = [], // array of feature strings
+    features = [],
   } = property;
 
-  // WhatsApp message pre-filled with property name
   const whatsappMsg = encodeURIComponent(
     `Hello, I am interested in the property: ${name} (${location}) listed at ${price}. Please provide more information.`,
   );
@@ -71,44 +66,10 @@ export default function PropertyDetail() {
           </div>
         </div>
 
-        {/* ── GALLERY ──────────────────────── */}
+        {/* Single centered image */}
         <div className={styles.galleryGrid}>
           <div className={styles.galleryMain}>
             <img src={image} alt={name} />
-          </div>
-          <div className={styles.gallerySide}>
-            {images[0] ? (
-              <div className={styles.galleryThumb}>
-                <img src={images[0]} alt={`${name} view 2`} />
-              </div>
-            ) : (
-              <div className={styles.galleryThumb}>
-                <img
-                  src={image}
-                  alt={name}
-                  style={{ filter: "brightness(0.7)" }}
-                />
-              </div>
-            )}
-            {images[1] ? (
-              <div className={styles.galleryThumb}>
-                <img src={images[1]} alt={`${name} view 3`} />
-                {images.length > 2 && (
-                  <div className={styles.galleryThumbOverlay}>
-                    +{images.length - 2} more photos
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div className={styles.galleryThumb}>
-                <img
-                  src={image}
-                  alt={name}
-                  style={{ filter: "brightness(0.5)" }}
-                />
-                <div className={styles.galleryThumbOverlay}>View Gallery</div>
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -160,43 +121,30 @@ export default function PropertyDetail() {
           </div>
 
           {/* Features */}
-          {features.length > 0 && (
-            <div className={styles.block}>
-              <h2 className={styles.blockTitle}>Features & Amenities</h2>
-              <div className={styles.featuresGrid}>
-                {features.map((f) => (
-                  <div key={f} className={styles.featureItem}>
-                    {f}
-                  </div>
-                ))}
-              </div>
+          <div className={styles.block}>
+            <h2 className={styles.blockTitle}>Features & Amenities</h2>
+            <div className={styles.featuresGrid}>
+              {(features.length > 0
+                ? features
+                : [
+                    "Gated Estate",
+                    "24/7 Security",
+                    "Dedicated Parking",
+                    "Backup Power",
+                    "Fitted Kitchen",
+                    "Quality Finishes",
+                    "Paved Roads",
+                    "Drainage System",
+                  ]
+              ).map((f) => (
+                <div key={f} className={styles.featureItem}>
+                  {f}
+                </div>
+              ))}
             </div>
-          )}
+          </div>
 
-          {/* Default features if none provided */}
-          {features.length === 0 && (
-            <div className={styles.block}>
-              <h2 className={styles.blockTitle}>Features & Amenities</h2>
-              <div className={styles.featuresGrid}>
-                {[
-                  "Gated Estate",
-                  "24/7 Security",
-                  "Dedicated Parking",
-                  "Backup Power",
-                  "Fitted Kitchen",
-                  "Quality Finishes",
-                  "Paved Roads",
-                  "Drainage System",
-                ].map((f) => (
-                  <div key={f} className={styles.featureItem}>
-                    {f}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Location / Map */}
+          {/* Map */}
           <div className={styles.block}>
             <h2 className={styles.blockTitle}>Location</h2>
             <p className={styles.blockText}>{location}</p>
@@ -212,7 +160,7 @@ export default function PropertyDetail() {
           </div>
         </div>
 
-        {/* ── RIGHT COLUMN — ENQUIRY ────────── */}
+        {/* ── RIGHT COLUMN ─────────────────── */}
         <div className={styles.enquiryCard}>
           <div className={styles.enquiryCardHead}>
             <h3 className={styles.enquiryCardTitle}>
@@ -222,11 +170,9 @@ export default function PropertyDetail() {
               Our advisor will respond within 24 hours
             </p>
           </div>
-
           <div className={styles.enquiryDivider}>
             <span className={styles.enquiryDividerText}>chat us directly</span>
           </div>
-
           <a
             href={`https://wa.me/2348000000000?text=${whatsappMsg}`}
             target="_blank"

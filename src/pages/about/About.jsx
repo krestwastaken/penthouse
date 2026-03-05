@@ -3,6 +3,8 @@ import { team, cards } from "../data";
 import Hero from "../../components/hero/Hero";
 import styles from "./About.module.css";
 
+import missionImg from '../../assets/facilityimgs/facilityImg1.jpg'
+
 export default function About() {
   return (
     <main className={styles.about}>
@@ -51,8 +53,8 @@ export default function About() {
 
             <div className={styles.missionVisual}>
               <div className={styles.visualMain}>
-                {/* swap div for img when you have a photo:
-                    <img src={missionImg} alt="Our mission" /> */}
+                
+                    <img src={missionImg} alt="Our mission" />
               </div>
               <div className={styles.visualAccent} />
               <div className={styles.statBadge}>
