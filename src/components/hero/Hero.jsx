@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
 import heroImg from '../../assets/properties/3-BDD.jpg'
 import compactHeroImg from '../../assets/properties/3-BSD.jpg'
+
 export default function Hero({
   tag = "Luxury Real Estate",
   title = (

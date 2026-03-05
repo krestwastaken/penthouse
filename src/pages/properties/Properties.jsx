@@ -2,6 +2,7 @@ import { useState } from "react";
 import { properties, types, statuses } from "../data";
 import Hero from "../../components/hero/Hero";
 import styles from "./Properties.module.css";
+import { Link } from "react-router-dom";
 
 export default function Properties() {
   const [activeType, setActiveType] = useState("All");
@@ -91,16 +92,18 @@ export default function Properties() {
                   <div className={styles.cardType}>{p.type}</div>
                   <h3 className={styles.cardName}>{p.name}</h3>
                   <p className={styles.cardLocation}>📍 {p.location}</p>
-                  <div className={styles.cardSpecs}>
+                  {/* <div className={styles.cardSpecs}>
                     <span>{p.beds} Bed</span>
                     <span className={styles.dot} />
                     <span>{p.baths} Bath</span>
                     <span className={styles.dot} />
                     <span>{p.sqft} sqft</span>
-                  </div>
+                  </div> */}
                   <div className={styles.cardFooter}>
                     <span className={styles.cardPrice}>{p.price}</span>
-                    {/* <button className={styles.cardCta}>Enquire</button> */}
+                    <Link to={`/property-detail/${p.id}`}>
+                      <button className={styles.cardCta}>Enquire</button>
+                    </Link>
                   </div>
                 </div>
               </div>

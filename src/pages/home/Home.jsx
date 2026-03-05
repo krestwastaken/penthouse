@@ -93,13 +93,6 @@ export default function Home() {
                 <div className={styles.propertyCardBody}>
                   <h3 className={styles.propertyCardName}>{p.name}</h3>
                   <p className={styles.propertyCardLocation}>{p.location}</p>
-                  <div className={styles.propertyCardMeta}>
-                    <span>{p.beds} Bed</span>
-                    <span className={styles.dot} />
-                    <span>{p.sqft}</span>
-                    <span className={styles.dot} />
-                    <span>1600 m</span>
-                  </div>
                   <div className={styles.propertyCardFooter}>
                     <Link to="/properties" className={styles.propertyCardCta}>
                       Book Now

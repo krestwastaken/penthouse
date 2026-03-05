@@ -7,6 +7,7 @@ import About from "./pages/about/About"
 import Properties from "./pages/properties/Properties";
 import FacilityManagement from "./pages/facility/FacilityManagement";
 import Contact from "./pages/contact/Contact";
+import PropertyDetail from './pages/propertydetail/PropertyDetail'
 
 function AppContent() {
   const location = useLocation();
@@ -25,6 +26,7 @@ function AppContent() {
         <Route path="/properties" element={<Properties />} />
         <Route path="/facility-management" element={<FacilityManagement />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/property-detail/:id" element={<PropertyDetail/>} />
       </Routes>
       <Footer />
     </>
