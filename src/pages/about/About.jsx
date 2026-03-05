@@ -3,7 +3,7 @@ import { team, cards } from "../data";
 import Hero from "../../components/hero/Hero";
 import styles from "./About.module.css";
 
-import missionImg from '../../assets/facilityimgs/facilityImg1.jpg'
+import missionImg from "../../assets/facilityimgs/facilityImg1.jpg";
 
 export default function About() {
   return (
@@ -36,15 +36,18 @@ export default function About() {
                 is the ultimate <em>statement</em>.
               </h2>
               <p>
-                Founded in 1999, Penthouse Real Estate has spent over two
-                decades curating the world's most extraordinary residential
-                properties. What began as a boutique agency has grown into a
-                global presence with 18 offices across 4 continents.
+                Penthouse Properties Limited is a leading estate development,
+                agency, and facility management firm with over 20 years of
+                experience across Nigeria's major cities, including Abuja,
+                Lagos, Port Harcourt, and Akure. We are a team of seasoned,
+                highly experienced professionals dedicated to delivering
+                first-class efficient service through transparency,
+                professionalism, and excellence.
               </p>
               <p>
-                We serve a discerning clientele who understand that true luxury
-                is not merely about price — it is about provenance,
-                craftsmanship, position, and the story a property tells.
+                Founded in 1992, Penthouse has built a reputation for structured
+                estate development, reliable property management, and trusted
+                consultancy. Our head office is located in Abuja.
               </p>
               <Link to="/contact" className={styles.btnPrimary}>
                 Work With Us
@@ -53,8 +56,7 @@ export default function About() {
 
             <div className={styles.missionVisual}>
               <div className={styles.visualMain}>
-                
-                    <img src={missionImg} alt="Our mission" />
+                <img src={missionImg} alt="Our mission" />
               </div>
               <div className={styles.visualAccent} />
               <div className={styles.statBadge}>
