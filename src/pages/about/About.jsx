@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+
+import useScrollReveal from "../../hooks/useScrollReveal";
 import { team, cards } from "../data";
 import Hero from "../../components/hero/Hero";
 import styles from "./About.module.css";
@@ -8,7 +10,7 @@ import missionImg from "../../assets/facilityimgs/facilityImg1.jpg";
 export default function About() {
   return (
     <main className={styles.about}>
-      {/* ── HERO ───────────────────────────────── */}
+      {/* ── HERO ──────────────────────────────── */}
       <Hero
         tag="Our Story"
         title={
@@ -21,7 +23,7 @@ export default function About() {
         subtitle="Two decades of curating extraordinary properties."
       />
 
-      {/* ── MISSION ────────────────────────────── */}
+      {/* ── PHILOSOPHY ───────────────────────────── */}
       <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.mission}>

@@ -1,4 +1,4 @@
-import pentHouse3bd from '../assets/properties/3-BDD.jpg'
+import pentHouse3bd from "../assets/properties/3-BDD.jpg";
 import pentHouse3bdwbq from "../assets/properties/3-BDDwBQ.jpg";
 import pentHouse3bsd from "../assets/properties/3-BSD.jpg";
 import pentHouse3bsd2 from "../assets/properties/3-BSD2.jpg";
@@ -11,7 +11,7 @@ export const featuredProperties = [
     id: 1,
     name: "3-Bedroom Detached Duplex",
     image: pentHouse3bd,
-    location: "Manhattan, New York",
+    location: "Abuja, Nigeria",
     price: "₦50M",
     beds: 3,
     sqft: "3,767 sqft",
@@ -21,8 +21,8 @@ export const featuredProperties = [
     id: 2,
     name: "3-Bedroom Detached Duplex with BQ",
     image: pentHouse3bdwbq,
-    location: "Beverly Hills, CA",
-    price: "₦8.9M",
+    location: "Abuja, Nigeria",
+    price: "₦60M",
     beds: 3,
     sqft: "4,305 sqft",
     tag: "New Listing",
@@ -31,12 +31,18 @@ export const featuredProperties = [
     id: 3,
     name: "4-Bedroom Detached Duplex",
     image: pentHouse4bd,
-    location: "Miami Beach, FL",
-    price: "$₦9.6M",
+    location: "Abuja, Nigeria",
+    price: "₦65M",
     beds: 4,
     sqft: "$4,300 sqft",
     tag: "Featured",
   },
+];
+
+export const penthouseStats = [
+  { num: "100+", label: "Properties Sold" },
+  { num: "₦750.2M", label: "In Total Sales" },
+  { num: "5+", label: "Years of Excellence" },
 ];
 
 // About Page
@@ -110,7 +116,7 @@ export const contacts = [
   },
 ];
 
-//Properties 
+//Properties
 export const properties = [
   {
     id: 1,
@@ -143,7 +149,7 @@ export const properties = [
     name: "3-Bedroom Semi-Detached Duplex",
     image: pentHouse3bsd,
     location: "Abuja, Nigeria",
-    price: "₦8.9M",
+    price: "₦40M",
     beds: 3,
     baths: 3,
     sqft: "7,800",
@@ -156,7 +162,7 @@ export const properties = [
     name: "3-Bedroom Semi-Detached Duplex",
     image: pentHouse3bsd2,
     location: "Abuja, Nigeria",
-    price: "$₦6.6M",
+    price: "$₦45M",
     beds: 3,
     baths: 3,
     sqft: "3,400",
@@ -169,7 +175,7 @@ export const properties = [
     name: "4-Bedroom Detached Duplex",
     image: pentHouse4bd,
     location: "Abuja, Nigeria",
-    price: "₦7.2M",
+    price: "₦65M",
     beds: 4,
     baths: 4,
     sqft: "4,900",
@@ -194,3 +200,46 @@ export const properties = [
 
 export const types = ["All", "Detached", "Semi-Detached"];
 export const statuses = ["All", "For Sale", "For Lease"];
+
+
+//Facility Managment page
+export const services = [
+  "Tenant Management",
+  "Security",
+  "Maintenance & Repairs",
+];
+
+export const whatWeManage = [
+  {
+    icon: "🤝",
+    title: "Tenant Relations & Lease Management",
+    text: "We handle tenant screening, lease agreements, rent collection, and dispute resolution.",
+  },
+  {
+    icon: "🔐",
+    title: "Security & Access Control",
+    text: "24/7 security coordination, access systems, and visitor management for your property.",
+  },
+  {
+    icon: "🔧",
+    title: "Maintenance & Repairs",
+    text: "Routine inspections, preventive maintenance, and prompt repairs by vetted contractors.",
+  },
+  {
+    icon: "💡",
+    title: "Utilities & Essential Services",
+    text: "Water, electricity, waste management, and other utility coordination handled seamlessly.",
+  },
+  {
+    icon: "📈",
+    title: "Property Value Preservation",
+    text: "Strategic upkeep and improvements that protect and grow your property's market value.",
+  },
+];
+
+export const valuePoints = [
+  { icon: "🛡️", label: "Prevents Costly Damage" },
+  { icon: "📋", label: "Ensures Tenant Compliance" },
+  { icon: "🔩", label: "Regular Maintenance" },
+  { icon: "🏆", label: "Stays Desirable & Profitable" },
+];

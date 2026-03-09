@@ -1,18 +1,32 @@
 /* =============================================
    Home.module.css — Penthouse
-   Aesthetic: Light editorial hero → bold dark cards
-   Fonts: Fraunces (display) + DM Sans (body)
    ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,600&family=DM+Sans:wght@300;400;500&display=swap');
-
-/* ─── RESET / ROOT ─────────────────────────── */
+/* ─── BASE ──────────────────────────────────── */
 .home {
   font-family: 'DM Sans', sans-serif;
   font-weight: 300;
   color: #111;
   background: #f0f4f8;
   overflow-x: hidden;
+}
+
+.section {
+  padding: clamp(60px, 8vw, 100px) 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 80px);
+}
+
+.tag {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #718096;
+  font-weight: 500;
 }
 
 /* ─── MARQUEE STRIP ─────────────────────────── */
@@ -31,7 +45,7 @@
 }
 
 .marqueeTrack:hover {
-  animation-play-state: paused; /* pauses on hover */
+  animation-play-state: paused;
 }
 
 .marqueeContent {
@@ -57,92 +71,7 @@
   to   { transform: translateX(-50%); }
 }
 
-
-/* ─── SEARCH BAR ────────────────────────────── */
-/* .searchBar {
-  position: relative;
-  z-index: 10;
-  max-width: 1280px;
-  margin: -28px auto 0;
-  padding: 0 clamp(20px, 5vw, 80px);
-}
-
-.searchBarInner {
-  background: #fff;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-  padding: 24px 28px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
-  gap: 12px;
-  align-items: center;
-}
-
-.searchLabel {
-  grid-column: 1 / -1;
-  font-size: 13px;
-  font-weight: 500;
-  color: #0d1117;
-  margin-bottom: 4px;
-}
-
-.searchField {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid #e2e8f0;
-  padding: 12px 16px;
-  background: #f8fafc;
-  cursor: pointer;
-  transition: border-color 0.2s ease;
-}
-
-.searchField:hover { border-color: #0d1117; }
-
-.searchField select,
-.searchField input {
-  border: none;
-  background: transparent;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  color: #4a5568;
-  outline: none;
-  width: 100%;
-  cursor: pointer;
-}
-
-.searchIcon {
-  color: #718096;
-  font-size: 14px;
-  flex-shrink: 0;
-}
-
-.searchBtn {
-  padding: 14px 28px;
-  background: #0d1117;
-  color: #fff;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.3s ease;
-}
-
-.searchBtn:hover { background: #1a2332; } */
-
-/* ─── SECTION SHARED ────────────────────────── */
-.section {
-  padding: clamp(60px, 8vw, 100px) 0;
-}
-
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 clamp(20px, 5vw, 80px);
-}
-
-/* ─── FEATURED / POPULAR SECTION ───────────── */
+/* ─── FEATURED SECTION ──────────────────────── */
 .featured {
   background: #0d1117;
 }
@@ -195,10 +124,7 @@
   white-space: nowrap;
 }
 
-.exploreLink::after {
-  content: '——→';
-  letter-spacing: -2px;
-}
+
 
 .exploreLink:hover { color: #fff; }
 
@@ -213,7 +139,7 @@
   background: #1a2332;
   overflow: hidden;
   transition: transform 0.35s ease;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .propertyCard:hover { transform: translateY(-6px); }
@@ -227,15 +153,13 @@
 .propertyCardImgInner {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* fills the box without stretching */
-  object-position: center; /* crops from the center */
+  object-fit: cover;
+  object-position: center;
   display: block;
   transition: transform 0.55s ease;
 }
 
-.propertyCard:hover .propertyCardImgInner {
-  transform: scale(1.06);
-}
+.propertyCard:hover .propertyCardImgInner { transform: scale(1.06); }
 
 .propertyCardTagBadge {
   position: absolute;
@@ -266,30 +190,6 @@
   font-size: 12px;
   color: #718096;
   margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.propertyCardLocation::before { content: '📍'; font-size: 11px; }
-
-.propertyCardMeta {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  color: #718096;
-  padding-bottom: 14px;
-  margin-bottom: 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-
-.dot {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: #4a5568;
-  flex-shrink: 0;
 }
 
 .propertyCardFooter {
@@ -309,7 +209,7 @@
 .propertyCardCta {
   padding: 9px 18px;
   background: #0d1117;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #fff;
   font-family: 'DM Sans', sans-serif;
   font-size: 11px;
@@ -328,7 +228,7 @@
 /* ─── QUOTE SECTION ─────────────────────────── */
 .quoteSection {
   background: #0d1117;
-  border-top: 1px solid rgba(255,255,255,0.07);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
   padding: 80px 0;
 }
 
@@ -361,9 +261,7 @@
   letter-spacing: 0.05em;
 }
 
-.quoteContent {
-  position: relative;
-}
+.quoteContent { position: relative; }
 
 .quoteMark {
   font-family: 'Fraunces', serif;
@@ -384,40 +282,8 @@
   font-weight: 300;
 }
 
-/* ─── PARTNERS / LOGOS ──────────────────────── */
-.partnersSection {
-  background: #0d1117;
-  border-top: 1px solid rgba(255,255,255,0.07);
-  padding: 40px 0;
-}
-
-.partnersList {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 clamp(20px, 5vw, 80px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(32px, 6vw, 80px);
-  flex-wrap: wrap;
-}
-
-.partnerLogo {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: #4a5568;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.partnerLogo:hover { color: #718096; }
-
 /* ─── CTA SECTION ───────────────────────────── */
-.ctaSection {
-  background: #f0f4f8;
-}
+.ctaSection { background: #f0f4f8; }
 
 .ctaBox {
   display: grid;
@@ -435,8 +301,6 @@
   justify-content: center;
   gap: 18px;
 }
-
-.ctaBoxContent .tag { color: #718096; }
 
 .ctaBoxTitle {
   font-family: 'Fraunces', serif;
@@ -459,16 +323,16 @@
 }
 
 .ctaBoxVisual {
-  background: linear-gradient(160deg, #b8ccd8 0%, #7fa0b5 100%);
   position: relative;
   overflow: hidden;
 }
 
-.ctaBoxVisual::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 30% 60%, rgba(255,255,255,0.2) 0%, transparent 60%);
+.ctaBoxVisual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .btnPrimary {
@@ -483,6 +347,7 @@
   letter-spacing: 0.04em;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.2s ease;
+  align-self: flex-start;
 }
 
 .btnPrimary:hover {
@@ -490,35 +355,16 @@
   transform: translateY(-1px);
 }
 
-/* ─── ANIMATIONS ────────────────────────────── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.hideMobile { display: inline; }
-
-/* ─────────────────────────────────────────────
-   RESPONSIVE BREAKPOINTS
-   ───────────────────────────────────────────── */
-
-/* Tablet — 1024px */
+/* ─── RESPONSIVE ────────────────────────────── */
 @media (max-width: 1024px) {
   .propertyGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 
-  .quoteInner {
-    gap: 32px;
-  }
-
-  .ctaBox {
-    min-height: 400px;
-  }
+  .ctaBox { min-height: 400px; }
 }
 
-/* Large mobile — 768px */
 @media (max-width: 768px) {
   .propertyGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -530,7 +376,6 @@
     gap: 20px;
   }
 
-  /* Divider between person and quote on mobile */
   .quotePerson {
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -541,45 +386,28 @@
     min-height: unset;
   }
 
-  /* Image moves above content on mobile */
   .ctaBoxVisual {
     height: 220px;
-    min-height: unset;
     order: -1;
   }
 
-  .ctaBoxContent {
-    padding: 32px 24px;
-  }
+  .ctaBoxContent { padding: 32px 24px; }
 
   .sectionHead {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
-
-  .exploreLink {
-    font-size: 12px;
-  }
 }
 
-/* Mobile — 480px */
 @media (max-width: 480px) {
   .propertyGrid {
     grid-template-columns: 1fr;
     gap: 14px;
   }
 
-  .propertyCardBody {
-    padding: 14px;
-  }
+  .propertyCardBody { padding: 14px; }
 
-  .propertyCardMeta {
-    font-size: 10px;
-    gap: 6px;
-  }
-
-  /* Stack price and button vertically on small screens */
   .propertyCardFooter {
     flex-direction: column;
     align-items: flex-start;
@@ -592,20 +420,13 @@
     padding: 10px;
   }
 
-  .quoteContent p {
-    font-size: 14px;
-  }
-
-  .ctaBoxVisual {
-    height: 180px;
-  }
+  .ctaBoxVisual { height: 180px; }
 
   .ctaBoxContent {
     padding: 24px 20px;
     gap: 14px;
   }
 
-  /* Full width CTA button on mobile */
   .btnPrimary {
     width: 100%;
     justify-content: center;
