@@ -62,7 +62,9 @@ function WhoSection({ onCta }) {
   );
 }
 
-function WhatWeManageSection({ onCta, sectionRef, cardsRef }) {
+function WhatWeManageSection({ onCta }) {
+  const sectionRef = useScrollReveal()
+  const cardsRef = useScrollReveal()
   return (
     <section ref={sectionRef} className={`${styles.sectionDark} reveal`}>
       <div className={styles.container}>
@@ -180,9 +182,6 @@ export default function FacilityManagement() {
   const openPopup = () => setPopupOpen(true);
   const closePopup = () => setPopupOpen(false);
 
-  const sectionRef = useScrollReveal()
-  const cardsRef = useScrollReveal()
-
   return (
     <main className={styles.page}>
       <Hero
@@ -199,7 +198,7 @@ export default function FacilityManagement() {
       />
 
       <WhoSection onCta={openPopup} />
-      <WhatWeManageSection onCta={openPopup} sectionRef={sectionRef} cardsRef={cardsRef} />
+      <WhatWeManageSection onCta={openPopup} />
       <ValueSection onCta={openPopup} />
 
       {popupOpen && <WhatsAppPopup onClose={closePopup} />}
