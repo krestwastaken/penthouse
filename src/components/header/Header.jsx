@@ -31,6 +31,7 @@ export default function Header() {
         {/* Logo */}
         <Link to="/" className={styles.logo}>
         <img src={logoImg} alt="Penthouse" className={styles.logoImage} />
+        <span className={styles.logoMotto}>Shelter at its Best and Beyond</span>
         </Link>
 
         {/* Desktop Nav */}

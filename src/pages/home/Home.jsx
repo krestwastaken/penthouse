@@ -84,7 +84,7 @@ function QuoteSection() {
       <div className={styles.quoteInner}>
         <div className={styles.quotePerson}>
           <span className={styles.quotePersonName}>Dr. Segun Olu Ibukun</span>
-          <span className={styles.quotePersonRole}>Founder, Penthouse</span>
+          <span className={styles.quotePersonRole}>CEO, Penthouse</span>
         </div>
         <div className={styles.quoteContent}>
           <span className={styles.quoteMark}>"</span>

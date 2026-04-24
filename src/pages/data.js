@@ -41,15 +41,15 @@ export const featuredProperties = [
 
 export const penthouseStats = [
   { num: "100+", label: "Properties Sold" },
-  { num: "₦750.2M", label: "In Total Sales" },
-  { num: "5+", label: "Years of Excellence" },
+  { num: "₦15.35B", label: "In Total Sales" },
+  { num: "10+", label: "Years of Excellence" },
 ];
 
 // About Page
 export const team = [
   {
     name: "Dr. Segun Olu Ibukun",
-    role: "Founder & CEO",
+    role: "Managing Director & CEO",
     years: "25 years experience",
   },
   {

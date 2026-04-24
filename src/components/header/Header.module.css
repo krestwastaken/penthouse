@@ -37,6 +37,18 @@
   flex-shrink: 0;
 }
 
+.logoMotto {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #718096;
+  font-weight: 400;
+  line-height: 1.4;
+  max-width: 120px;
+  border-left: 1px solid #e2e8f0;
+  padding-left: 12px;
+}
+
 .logoImage {
   height: 62px;          /* adjust as needed */
   width: auto;
