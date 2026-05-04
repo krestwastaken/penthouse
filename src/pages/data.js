@@ -118,21 +118,9 @@ export const contacts = [
 
 //Properties
 export const properties = [
+  
   {
     id: 1,
-    name: "3-Bedroom Detached Duplex",
-    image: pentHouse3bd,
-    location: "Abuja, Nigeria",
-    price: "₦50M",
-    beds: 3,
-    baths: 3,
-    sqft: "3,767",
-    type: "Detached",
-    status: "For Sale",
-    tag: "Exclusive",
-  },
-  {
-    id: 2,
     name: "3-Bedroom Detached Duplex with BQ",
     image: pentHouse3bdwbq,
     location: "Abuja, Nigeria",
@@ -145,7 +133,7 @@ export const properties = [
     tag: "Exclusive",
   },
   {
-    id: 3,
+    id: 2,
     name: "3-Bedroom Semi-Detached Duplex",
     image: pentHouse3bsd,
     location: "Abuja, Nigeria",
@@ -158,7 +146,7 @@ export const properties = [
     tag: "New",
   },
   {
-    id: 4,
+    id: 3,
     name: "3-Bedroom Semi-Detached Duplex",
     image: pentHouse3bsd2,
     location: "Abuja, Nigeria",
@@ -171,20 +159,7 @@ export const properties = [
     tag: "Featured",
   },
   {
-    id: 5,
-    name: "4-Bedroom Detached Duplex",
-    image: pentHouse4bd,
-    location: "Abuja, Nigeria",
-    price: "₦65M",
-    beds: 4,
-    baths: 4,
-    sqft: "4,900",
-    type: "Detached",
-    status: "For Sale",
-    tag: null,
-  },
-  {
-    id: 6,
+    id: 4,
     name: "4-Bedroom Detached Duplex with BQ",
     image: pentHouse4bdwbq,
     location: "Abuja, Nigeria",
