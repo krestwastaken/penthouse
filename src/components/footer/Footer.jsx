@@ -4,6 +4,16 @@ import logoImg from "../../assets/logo.png";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const socialLinks = [
+    {
+      label: "Instagram",
+      url: "https://www.instagram.com/penthousepropertiesltd",
+    },
+    {
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/company/penthouse-properties-limited/",
+    },
+  ];
   return (
     <footer className={styles.footer}>
       <div className={styles.footerTop}>
@@ -20,9 +30,9 @@ export default function Footer() {
 
           {/* socials */}
           <div className={styles.socials}>
-            {["Instagram", "LinkedIn", "Twitter"].map((s) => (
-              <a key={s} href="#" className={styles.social}>
-                {s}
+            {socialLinks.map(({label, url}) => (
+              <a key={label} href={url} className={styles.social} rel="noreferrer" target="_blank">
+                {label}
               </a>
             ))}
           </div>
