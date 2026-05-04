@@ -30,8 +30,14 @@ export default function Footer() {
 
           {/* socials */}
           <div className={styles.socials}>
-            {socialLinks.map(({label, url}) => (
-              <a key={label} href={url} className={styles.social} rel="noreferrer" target="_blank">
+            {socialLinks.map(({ label, url }) => (
+              <a
+                key={label}
+                href={url}
+                className={styles.social}
+                rel="noreferrer"
+                target="_blank"
+              >
                 {label}
               </a>
             ))}
@@ -91,8 +97,8 @@ export default function Footer() {
       {/* ── BOTTOM ───────────────────────────── */}
       <div className={styles.footerBottom}>
         <p className={styles.copy}>
-          © {new Date().getFullYear()} Penthouse Real Estate. All rights
-          reserved.
+          © {new Date().getFullYear()} Penthouse Properties Ltd | Real Estate
+          All rights reserved.
         </p>
         <div className={styles.legal}>
           <a href="#" className={styles.legalLink}>
